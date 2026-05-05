@@ -14,15 +14,16 @@ public class MahasiswaDemo03 {
             System.out.println("4. Melihat Daftar Tugas");
             System.out.println("5. Melihat Tugas Terbawah");
             System.out.println("6. Hitung Jumlah Tugas");
+            System.out.print("Pilih: ");
             pilih = sc.nextInt();
             sc.nextLine();
             switch (pilih) {
                 case 1:
-                    System.out.println("Nama: ");
+                    System.out.print("Nama: ");
                     String nama = sc.nextLine();
-                    System.out.println("NIM: ");
+                    System.out.print("NIM: ");
                     String nim = sc.nextLine();
-                    System.out.println("Kelas: ");
+                    System.out.print("Kelas: ");
                     String kelas = sc.nextLine();
                     Mahasiswa03 mhs = new Mahasiswa03(nama, nim, kelas);
                     stack.push(mhs);
@@ -32,12 +33,12 @@ public class MahasiswaDemo03 {
                     Mahasiswa03 dinilai = stack.pop();
                     if (dinilai != null) {
                         System.out.println("Menilai tugas dari " + dinilai.nama);
-                        System.out.println("Masukkan nilai (0-100): ");
+                        System.out.print("Masukkan nilai (0-100): ");
                         int nilai = sc.nextInt();
                         dinilai.tugasDinilai(nilai);
                         System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, nilai);
                         String biner = stack.konversiDesimalKeBiner(nilai);
-                        System.out.println("Nilai Biner Tugas: " + biner);
+                        System.out.print("Nilai Biner Tugas: " + biner);
                     }
                     break;
                 case 3:
@@ -55,7 +56,7 @@ public class MahasiswaDemo03 {
                     Mahasiswa03 terbawah = stack.peekBottom();
                     if (terbawah != null) {
                         System.out.println("Tugas pertama dikumpulkan oleh: " + terbawah.nama);
-                        System.out.println("NIM: " + terbawah.nim);
+                        System.out.print("NIM: " + terbawah.nim);
                     }
                     break;
                 case 6:
