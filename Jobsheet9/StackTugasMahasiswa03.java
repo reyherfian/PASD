@@ -38,16 +38,16 @@ public class StackTugasMahasiswa03 {
         if (!isEmpty()) {
             Mahasiswa03 m = stack[top];
             top--;
-            return  m;
+            return m;
         } else {
             System.out.println("Stack kosong! Tidak ada tugas untuk dinilai.");
             return null;
         }
     }
-    
+
     public Mahasiswa03 peek() {
         if (!isEmpty()) {
-            return  stack[top];
+            return stack[top];
         } else {
             System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");
             return null;
@@ -55,9 +55,26 @@ public class StackTugasMahasiswa03 {
     }
 
     public void print() {
-        for (int i = 0; i <= top; i++) {
+        for (int i = top; i >= 0; i--) {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
-        System.out.println(" ");
+        System.out.println("");
+    }
+
+    public Mahasiswa03 peekBottom() {
+        if (!isEmpty()) {
+            return stack[0]; // Tugas pertama selalu ada di indeks 0
+        } else {
+            System.out.println("Stack kosong! Belum ada tugas yang dikumpulkan.");
+            return null;
+        }
+    }
+
+    public int getJumlahTugas() {
+        if (!isEmpty()) {
+            return top + 1; // Jika top=0 berarti ada 1 tugas, jika top=1 ada 2 tugas, dst.
+        } else {
+            return 0;
+        }
     }
 }
